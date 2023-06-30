@@ -1,0 +1,31 @@
+server:
+  port: 9001
+spring:
+  datasource:
+    url: ${OBJECTS_DB_URL:jdbc:postgresql://localhost:5432/users_admin}
+    username: ${OBJECTS_DB_USER:postgres}
+    password: ${OBJECTS_DB_PASSWORD:postgres}
+    driverClassName: ${OBJECTS_DB_DRIVER:org.postgresql.Driver}
+  jpa:
+    properties:
+      hibernate:
+        dialect: ${OBJECTS_DB_DIALECT:org.hibernate.dialect.PostgreSQLDialect}
+        hbm2ddl:
+          auto: create
+#  kafka:
+#    bootstrap-servers: ${KAFKA_SERVERS:kafka-alfa-preprod.it-alnc.ru:9092}
+#    topic:
+#      messagepack:
+#        eq-taksa:
+#          client: ${EQ_TAKSA_CLIENT:messagepack.eq_taksa_client}
+
+#logging:
+#  file:
+#    name: ${MP_LOGS_PATH:/logs/prodcatservice.log}
+#  level:
+#    root: ${MP_LOG_LEVEL:info}
+#
+#url:
+#  objects: ${OBJECTS_URL:http://localhost:9091/objects}
+#  info: ${ITA_INFO:https://info-alfa-dev.k8s.it-alnc.ru/info}
+
